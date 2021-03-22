@@ -1,18 +1,13 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+![](https://img.shields.io/badge/Tic_Tac_Toe-blueviolet)
 
-# Project Name
+# Tic Tac Toe
 
-> One paragraph statement about the project.
-
-![screenshot](./app_screenshot.png)
-
-Additional description about the project and its features.
+> Tic Tac Toe is a simple game made with ruby and the usage of object oriented programming 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- ruby
+
 
 ## Live Demo
 
@@ -21,13 +16,14 @@ Additional description about the project and its features.
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+**Clone the repo or download the zip folder**
+**make sure you have ruby installed locally**
+**run ruby main.rb**
 
 
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
+### 
 
 ### Setup
 
@@ -45,15 +41,16 @@ To get a local copy up and running follow these simple example steps.
 
 👤 **Author1**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/linkedinhandle)
+- Twitter: [@twitterhandle](https://twitter.com/ShaherShamroukh/)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/shaher-shamroukh/)
+- GitHub: [@githubhandle](https://github.com/Shaher-11/)
 
 👤 **Author2**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/linkedinhandle)
+
+- GitHub: [@Addis0943](https://github.com/Addis0943)
+- Twitter: [@Addis32018084](https://twitter.com/Addis32018084)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/addis-belete-134b98191)
 
 ## 🤝 Contributing
 
@@ -67,10 +64,10 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Microverse
+- The Odin Project
+
 
 ## 📝 License
 
-This project is [MIT](lic.url) licensed.
+This project is [MIT](./LICENSE) licensed.
