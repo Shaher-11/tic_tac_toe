@@ -18,7 +18,7 @@
 
 **Clone the repo or download the zip folder**
 **make sure you have ruby installed locally**
-**run ruby main.rb**
+**run ruby main**
 
 
 To get a local copy up and running follow these simple example steps.
