@@ -7,14 +7,27 @@ puts
 puts "Enter first player name:"
 player1 = gets.chomp.capitalize
 
+until Board.validate_name(player1)
+  puts 'Name is too short, please try again'
+  player1 = gets.chomp.capitalize
+end
+
 puts "Enter second player name:"
 player2 = gets.chomp.capitalize
+
+
+until Board.validate_name(player2)
+  puts 'Name is too short,please try again'
+  player2 = gets.chomp.capitalize
+end
 
 star = "\u{2B50}"
 droplet = "\u{1F4A7}"
 
 first_player = Player.new(player1, star)
 second_player = Player.new(player2, droplet)
+
+
 puts
 puts "#{first_player.name} will play with #{first_player.sign} and #{second_player.name} will play with #{second_player.sign}"
 puts
