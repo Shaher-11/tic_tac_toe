@@ -18,3 +18,15 @@ puts '| 4 | 5 | 6 |'
 puts '+---+---+---+'
 puts '| 7 | 8 | 9 |'
 puts '+---+---+---+'
+puts
+puts "It is #{player1} turn"
+puts
+puts 'Please select available cell'
+gets.chomp
+
+puts "Now it is #{player2} turn"
+puts
+puts 'Please select available cell'
+gets.chomp
+puts
+puts "The winner is #{player1}"
