@@ -18,6 +18,7 @@ puts
 arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 game_on = true
 
+
 puts '+---+---+---+'
 puts "| #{arr[0]} | #{arr[1]} | #{arr[2]} |"
 puts '+---+---+---+'
@@ -54,5 +55,5 @@ puts "Gme over"
 puts 
 
 puts "The Winner is #{player1} \u{1f973} \u{1F389}"
-puts
+puts 
 puts "Good luck next time #{player2} \u{1f609}"
