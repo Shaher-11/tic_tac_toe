@@ -1,32 +1,37 @@
 #!/usr/bin/env ruby
-puts "Welcome to Ruby's tic tac toe"
+puts "Welcome to Ruby's tic tac toe \u{1F600}"
 puts
 puts 'Enter first player name:'
 player1 = gets.chomp
 puts 'Enter second player name:'
 player2 = gets.chomp
 
+star = "\u{2B50}"
+droplet = "\u{1F4A7}"
 puts
-puts "#{player1} will play with X and #{player2} will play with O"
+puts "#{player1} will play with #{star} and #{player2} will play with #{droplet}"
 puts
 puts "Let's Start!"
 puts
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 puts '+---+---+---+'
-puts '| 1 | 2 | 3 |'
+puts "| #{arr[0]} | #{arr[1]} | #{arr[2]} |"
 puts '+---+---+---+'
-puts '| 4 | 5 | 6 |'
+puts "| #{arr[3]} | #{arr[4]} | #{arr[5]} |"
 puts '+---+---+---+'
-puts '| 7 | 8 | 9 |'
+puts "| #{arr[6]} | #{arr[7]} | #{arr[8]} |"
 puts '+---+---+---+'
 puts
-puts "It is #{player1} turn"
+puts "It is #{player1}'s turn"
 puts
-puts 'Please select available cell'
+puts 'Please select an available cell number'
 gets.chomp
 
-puts "Now it is #{player2} turn"
+puts "Now it is #{player2}'s turn"
 puts
-puts 'Please select available cell'
+puts 'Please select an available cell number'
 gets.chomp
 puts
-puts "The winner is #{player1}"
+puts "The Winner is #{player1} \u{1f973} \u{1F389}"
+puts 
+puts "Good luck next time #{player2} \u{1f609}"
