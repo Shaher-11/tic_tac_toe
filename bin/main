@@ -1,3 +1,9 @@
 #!/usr/bin/env ruby
+puts "Welcome to Ruby's tic tac toe"
+puts "Enter first player name:"
+player1 = gets.chomp
+puts "Enter second player name:"
+player2 = gets.chomp
 
-puts 'Hello World!'
+puts "#{player1} will play with X and #{player2} will play with O"
+puts "Lets Start!"
