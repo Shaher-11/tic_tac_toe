@@ -1,10 +1,10 @@
 #!/usr/bin/env ruby
-require_relative("../lib/player")
-require_relative("../lib/board")
+require_relative('../lib/player')
+require_relative('../lib/board')
 
 puts "Welcome to Ruby's tic tac toe \u{1F600}"
 puts
-puts "Enter first player name:"
+puts 'Enter first player name:'
 player1 = gets.chomp.capitalize
 
 until Board.validate_name(player1)
@@ -12,9 +12,8 @@ until Board.validate_name(player1)
   player1 = gets.chomp.capitalize
 end
 
-puts "Enter second player name:"
+puts 'Enter second player name:'
 player2 = gets.chomp.capitalize
-
 
 until Board.validate_name(player2)
   puts 'Name is too short,please try again'
@@ -27,9 +26,9 @@ droplet = "\u{1F4A7}"
 first_player = Player.new(player1, star)
 second_player = Player.new(player2, droplet)
 
-
 puts
-puts "#{first_player.name} will play with #{first_player.sign} and #{second_player.name} will play with #{second_player.sign}"
+puts "#{first_player.name} will play with #{first_player.sign}
+and #{second_player.name} will play with #{second_player.sign}"
 puts
 puts "Let's Start!"
 puts
@@ -39,34 +38,33 @@ game_on = true
 turn = 0
 while game_on
   if turn <= 7
-    puts "+---+---+---+"
+    puts '+---+---+---+'
     puts "| #{arr[0]} | #{arr[1]} | #{arr[2]} |"
-    puts "+---+---+---+"
+    puts '+---+---+---+'
     puts "| #{arr[3]} | #{arr[4]} | #{arr[5]} |"
-    puts "+---+---+---+"
+    puts '+---+---+---+'
     puts "| #{arr[6]} | #{arr[7]} | #{arr[8]} |"
-    puts "+---+---+---+"
+    puts '+---+---+---+'
     puts
 
     puts "It is #{first_player.name}'s turn"
     puts
 
-    puts "Please select an available cell number"
+    puts 'Please select an available cell number'
     selected_cell = gets.chomp.to_i
-    if selected_cell > 9
-      puts "Invalid move, please enter a number from 1 to 9"
+    if arr.include?(selected_cell)
+      puts "Now it is #{second_player.name}'s turn"
       puts
+    else
+      puts 'Please select an available cell number'
+      selected_cell = gets.chomp.to_i
     end
-    puts "Now it is #{second_player.name}'s turn"
-    puts
-    puts "Please select an available cell number"
-    selected_cell = gets.chomp.to_i
-    puts "Invalid move, please enter a number from 1 to 9" if selected_cell > 9
+    puts 'Invalid move, please enter a number from 1 to 9' if selected_cell > 9
     turn += 2
   else
     puts "It's a TIE"
     puts
-    puts "Game over"
+    puts 'Game over'
     puts
     puts "The Winner is #{second_player.name} \u{1f973} \u{1F389}"
     puts

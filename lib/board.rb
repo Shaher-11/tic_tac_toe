@@ -7,5 +7,4 @@ class Board
   def self.validate_name(name)
     name.length > 3
   end
-
 end
