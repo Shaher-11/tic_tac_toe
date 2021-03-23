@@ -13,7 +13,11 @@ puts "#{player1} will play with #{star} and #{player2} will play with #{droplet}
 puts
 puts "Let's Start!"
 puts
+
+
 arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+game_on = true
+
 puts '+---+---+---+'
 puts "| #{arr[0]} | #{arr[1]} | #{arr[2]} |"
 puts '+---+---+---+'
@@ -24,14 +28,31 @@ puts '+---+---+---+'
 puts
 puts "It is #{player1}'s turn"
 puts
+
 puts 'Please select an available cell number'
 gets.chomp
-
+puts "Invalid move, please enter a number from 1 to 9"
+puts
+puts '+---+---+---+'
+puts "| #{arr[0]} | #{arr[1]} | #{arr[2]} |"
+puts '+---+---+---+'
+puts "| #{arr[3]} | #{arr[4]} | #{arr[5]} |"
+puts '+---+---+---+'
+puts "| #{arr[6]} | #{arr[7]} | #{arr[8]} |"
+puts '+---+---+---+'
+puts
 puts "Now it is #{player2}'s turn"
 puts
 puts 'Please select an available cell number'
 gets.chomp
+puts "Invalid move, please enter a number from 1 to 9"
+
+puts "It's a TIE"
 puts
+
+puts "Gme over"
+puts 
+
 puts "The Winner is #{player1} \u{1f973} \u{1F389}"
 puts 
 puts "Good luck next time #{player2} \u{1f609}"
