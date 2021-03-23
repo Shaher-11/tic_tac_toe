@@ -1,13 +1,16 @@
 #!/usr/bin/env ruby
+require_relative('../lib/player')
 puts "Welcome to Ruby's tic tac toe \u{1F600}"
 puts
 puts 'Enter first player name:'
-player1 = gets.chomp
+player1 = gets.chomp.capitalize
+
 puts 'Enter second player name:'
-player2 = gets.chomp
+player2 = gets.chomp.capitalize
 
 star = "\u{2B50}"
 droplet = "\u{1F4A7}"
+
 puts
 puts "#{player1} will play with #{star} and #{player2} will play with #{droplet}"
 puts
