@@ -54,5 +54,5 @@ puts "Gme over"
 puts 
 
 puts "The Winner is #{player1} \u{1f973} \u{1F389}"
-puts 
+puts
 puts "Good luck next time #{player2} \u{1f609}"
