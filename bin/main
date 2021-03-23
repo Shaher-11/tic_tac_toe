@@ -1,12 +1,13 @@
 #!/usr/bin/env ruby
-require_relative('../lib/player')
+require_relative("../lib/player")
+require_relative("../lib/board")
 
 puts "Welcome to Ruby's tic tac toe \u{1F600}"
 puts
-puts 'Enter first player name:'
+puts "Enter first player name:"
 player1 = gets.chomp.capitalize
 
-puts 'Enter second player name:'
+puts "Enter second player name:"
 player2 = gets.chomp.capitalize
 
 star = "\u{2B50}"
@@ -25,34 +26,34 @@ game_on = true
 turn = 0
 while game_on
   if turn <= 7
-    puts '+---+---+---+'
+    puts "+---+---+---+"
     puts "| #{arr[0]} | #{arr[1]} | #{arr[2]} |"
-    puts '+---+---+---+'
+    puts "+---+---+---+"
     puts "| #{arr[3]} | #{arr[4]} | #{arr[5]} |"
-    puts '+---+---+---+'
+    puts "+---+---+---+"
     puts "| #{arr[6]} | #{arr[7]} | #{arr[8]} |"
-    puts '+---+---+---+'
+    puts "+---+---+---+"
     puts
 
     puts "It is #{first_player.name}'s turn"
     puts
 
-    puts 'Please select an available cell number'
+    puts "Please select an available cell number"
     selected_cell = gets.chomp.to_i
     if selected_cell > 9
-      puts 'Invalid move, please enter a number from 1 to 9'
+      puts "Invalid move, please enter a number from 1 to 9"
       puts
     end
     puts "Now it is #{second_player.name}'s turn"
     puts
-    puts 'Please select an available cell number'
+    puts "Please select an available cell number"
     selected_cell = gets.chomp.to_i
-    puts 'Invalid move, please enter a number from 1 to 9' if selected_cell > 9
+    puts "Invalid move, please enter a number from 1 to 9" if selected_cell > 9
     turn += 2
   else
     puts "It's a TIE"
     puts
-    puts 'Game over'
+    puts "Game over"
     puts
     puts "The Winner is #{second_player.name} \u{1f973} \u{1F389}"
     puts
