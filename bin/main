@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 require_relative('../lib/player')
+
 puts "Welcome to Ruby's tic tac toe \u{1F600}"
 puts
 puts 'Enter first player name:'
@@ -11,8 +12,10 @@ player2 = gets.chomp.capitalize
 star = "\u{2B50}"
 droplet = "\u{1F4A7}"
 
+first_player = Player.new(player1, star)
+second_player = Player.new(player2, droplet)
 puts
-puts "#{player1} will play with #{star} and #{player2} will play with #{droplet}"
+puts "#{first_player.name} will play with #{first_player.sign} and #{second_player.name} will play with #{second_player.sign}"
 puts
 puts "Let's Start!"
 puts
@@ -31,7 +34,7 @@ while game_on
     puts '+---+---+---+'
     puts
 
-    puts "It is #{player1}'s turn"
+    puts "It is #{first_player.name}'s turn"
     puts
 
     puts 'Please select an available cell number'
@@ -40,7 +43,7 @@ while game_on
       puts 'Invalid move, please enter a number from 1 to 9'
       puts
     end
-    puts "Now it is #{player2}'s turn"
+    puts "Now it is #{second_player.name}'s turn"
     puts
     puts 'Please select an available cell number'
     selected_cell = gets.chomp.to_i
@@ -51,9 +54,9 @@ while game_on
     puts
     puts 'Game over'
     puts
-    puts "The Winner is #{player1} \u{1f973} \u{1F389}"
+    puts "The Winner is #{second_player.name} \u{1f973} \u{1F389}"
     puts
-    puts "Good luck next time #{player2} \u{1f609}"
+    puts "Good luck next time #{second_player.name} \u{1f609}"
     break
   end
 end
