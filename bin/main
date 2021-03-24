@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
-require_relative("../lib/player")
-require_relative("../lib/board")
-require_relative("../lib/logic")
+require_relative('../lib/player')
+require_relative('../lib/board')
+require_relative('../lib/logic')
 
 class Game
   include Logic
@@ -18,19 +18,19 @@ class Game
     puts "Welcome to Ruby's tic tac toe \u{1F600}"
     puts
 
-    puts "Enter first player name:"
+    puts 'Enter first player name:'
     @player1 = gets.chomp.capitalize
 
     until Board.validate_name(@player1)
-      puts "Name is too short, please try again"
+      puts 'Name is too short, please try again'
       @player1 = gets.chomp.capitalize
     end
 
-    puts "Enter second player name:"
+    puts 'Enter second player name:'
     @player2 = gets.chomp.capitalize
 
     until Board.validate_name(@player2)
-      puts "Name is too short,please try again"
+      puts 'Name is too short,please try again'
       @player2 = gets.chomp.capitalize
     end
 
@@ -50,17 +50,20 @@ and #{@second_player.name} will play with #{@second_player.sign}"
 
   def board
     @arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-    puts "+---+---+---+"
+    puts '+---+---+---+'
     puts "| #{@arr[0]} | #{@arr[1]} | #{@arr[2]} |"
-    puts "+---+---+---+"
+    puts '+---+---+---+'
     puts "| #{@arr[3]} | #{@arr[4]} | #{@arr[5]} |"
-    puts "+---+---+---+"
+    puts '+---+---+---+'
     puts "| #{@arr[6]} | #{@arr[7]} | #{@arr[8]} |"
-    puts "+---+---+---+"
+    puts '+---+---+---+'
   end
 
-  def change(number, signy)
-    @arr[number] = signy
+  def change(number, sign)
+    @arr.each do |index|
+      @arr.push(sign) if number == @arr[index]
+      puts @arr[index]
+    end
   end
 
   def draw
@@ -80,12 +83,12 @@ and #{@second_player.name} will play with #{@second_player.sign}"
   def player1_turn
     puts "It is #{@player1}'s turn"
     puts
-    puts "Please select an available cell number"
+    puts 'Please select an available cell number'
     board
     loop do
       player1_turn = gets.chomp
-      @player1_trn << player1_turn.to_i if test_move(player1_turn) == true
-      puts "Invalid move! Please pick a number between 1 & 9:" if test_move(player1_turn) == false
+      (@player1_trn << player1_turn.to_i) if test_move(player1_turn) == true
+      puts 'Invalid move! Please pick a number between 1 & 9:' if test_move(player1_turn) == false
       break if test_move(player1_turn) == true
     end
   end
@@ -93,12 +96,12 @@ and #{@second_player.name} will play with #{@second_player.sign}"
   def player2_turn
     puts "It is #{@player2}'s turn"
     puts
-    puts "Please select an available cell number"
+    puts 'Please select an available cell number'
     board
     loop do
       player2_turn = gets.chomp
       @player2_trn << player2_turn.to_i if test_move(player2_turn) == true
-      puts "Invalid move! Please pick a number between 1 & 9:" if test_move(player2_turn) == false
+      puts 'Invalid move! Please pick a number between 1 & 9:' if test_move(player2_turn) == false
       break if test_move(player2_turn) == true
     end
   end
@@ -119,7 +122,6 @@ and #{@second_player.name} will play with #{@second_player.sign}"
       break if @win == true
     end
     draw unless @win == true
-    board
   end
 
   def play
