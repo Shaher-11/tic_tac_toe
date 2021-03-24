@@ -60,8 +60,8 @@ and #{@second_player.name} will play with #{@second_player.sign}"
     puts
   end
 
-  def change(number, symbol)
-    @arr[number] = symbol
+  def change(number, signy)
+    @arr[number] = signy
   end
 
   def draw
@@ -79,7 +79,7 @@ and #{@second_player.name} will play with #{@second_player.sign}"
   end
   
   def player1_turn
-    puts "It is #{@first_player.name}'s turn"
+    puts "It is #{@player1}'s turn"
     puts 
     puts "Please select an available cell number"
     board
@@ -92,7 +92,7 @@ and #{@second_player.name} will play with #{@second_player.sign}"
   end
 
   def player2_turn
-    puts "It is #{@first_player.name}'s turn"
+    puts "It is #{@player2}'s turn"
     puts 
     puts "Please select an available cell number"
     board
@@ -124,9 +124,9 @@ and #{@second_player.name} will play with #{@second_player.sign}"
     draw unless @win == true
     board
   end
-
- 
 end
 
 game = Game.new
+game.greeting
+game.board
 game.get_going
