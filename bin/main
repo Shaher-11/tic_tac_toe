@@ -1,9 +1,21 @@
 #!/usr/bin/env ruby
 require_relative('../lib/player')
 require_relative('../lib/board')
+require_relative('../lib/logic')
+
+class Game
+  include Logic
+
+  def initialize
+    @player1_trn = []
+    @player2_trn = []
+    @winning_options = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 7], [2, 5, 8], [3, 6, 9], [1, 5, 9], [3, 5, 7]]
+    @turns = []
+  end
 
 puts "Welcome to Ruby's tic tac toe \u{1F600}"
 puts
+
 puts 'Enter first player name:'
 player1 = gets.chomp.capitalize
 
@@ -33,11 +45,10 @@ puts
 puts "Let's Start!"
 puts
 
-arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-game_on = true
-turn = 0
-while game_on
-  if turn <= 7
+    arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    @player1_trn.each { |ps| arr[ps - 1] = first_player.sign }
+    @player2_trn.each { |ps| arr[ps - 1] = second_player.sign }
+
     puts '+---+---+---+'
     puts "| #{arr[0]} | #{arr[1]} | #{arr[2]} |"
     puts '+---+---+---+'
@@ -51,17 +62,22 @@ while game_on
     puts
 
     puts 'Please select an available cell number'
-    selected_cell = gets.chomp.to_i
-    if arr.include?(selected_cell)
+    selected_cell1 = gets.chomp.to_i
+
+      puts 'Please select a valid cell number'
+      selected_cell1 = gets.chomp.to_i
+    
+
       puts "Now it is #{second_player.name}'s turn"
       puts
-    else
-      puts 'Please select an available cell number'
-      selected_cell = gets.chomp.to_i
-    end
-    puts 'Invalid move, please enter a number from 1 to 9' if selected_cell > 9
-    turn += 2
-  else
+      
+      puts 'Please select an available valid cell number'
+      selected_cell2 = gets.chomp.to_i
+
+        puts 'Please select a valid cell number'
+        selected_cell2 = gets.chomp.to_i
+
+    puts 'Invalid move, please enter a number from 1 to 9' 
     puts "It's a TIE"
     puts
     puts 'Game over'
@@ -69,6 +85,4 @@ while game_on
     puts "The Winner is #{second_player.name} \u{1f973} \u{1F389}"
     puts
     puts "Good luck next time #{second_player.name} \u{1f609}"
-    break
-  end
-end
+end 
