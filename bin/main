@@ -10,7 +10,8 @@ class Game
     @player1_trn = []
     @player2_trn = []
     @winning_options = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 7], [2, 5, 8], [3, 6, 9], [1, 5, 9], [3, 5, 7]]
-    @turns = []
+    @tak_turns = []
+    @win = false
   end
 
   def greeting
@@ -99,20 +100,30 @@ and #{@second_player.name} will play with #{@second_player.sign}"
     end
   end
 
-  def winner
-    puts "Invalid move, please enter a number from 1 to 9"
-    puts "It's a TIE"
-    puts
-    puts "Game over"
-    puts
-    puts
+  def get_going
+    c = 0
+    until c > 9
+      player1_turn
+      calc_tak_turns
+      c += 1
+      wining
+      break if c == 9 || @win == true
+
+      player2_turn
+      calc_tak_turns
+      c += 1
+      wining
+      break if @win == true
+    end
+    draw unless @win == true
+    board
+  end
+
+  def start
+    greeting
+    get_going
   end
 end
 
 game = Game.new
-game.greeting
-game.board
-game.player1_turn
-game.player1_turn
-
-game.winner
+game.get_going
