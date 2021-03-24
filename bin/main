@@ -59,6 +59,20 @@ and #{@second_player.name} will play with #{@second_player.sign}"
     puts
   end
 
+  def draw
+    puts "#{@fisrt_player.name} & #{@second_player.name} Draw"
+  end
+
+  def player1_wins
+    puts "The Winner is #{@fisrt_player.name} \u{1f973} \u{1F389}"
+    puts "Good luck next time #{@second_player.name} \u{1f609}"
+  end
+
+  def player2_wins
+    puts "The Winner is #{@second_player.name} \u{1f973} \u{1F389}"
+    puts "Good luck next time #{@first_player.name} \u{1f609}"
+  end
+
   def turns
     puts "It is #{@first_player.name}'s turn"
     puts
@@ -87,10 +101,8 @@ and #{@second_player.name} will play with #{@second_player.sign}"
     puts
     puts "Game over"
     puts
-    puts "The Winner is #{@second_player.name} \u{1f973} \u{1F389}"
     puts
-    puts "Good luck next time #{@second_player.name} \u{1f609}"
-  end
+end 
 end
 
 game = Game.new
