@@ -73,39 +73,16 @@ and #{@second_player.name} will play with #{@second_player.sign}"
     puts "Good luck next time #{@first_player.name} \u{1f609}"
   end
 
-  
-  def turns
-    no_turns = 1
-    while no_turns <= 9
-      puts "It is #{@first_player.name}'s turn"
-      puts
-      puts "Please select an available cell number"
-      @selected_cell1 = gets.chomp.to_i
-      until (@selected_cell1 = ~/^-?[0-9]+$/ && @selected_cell1.between?(1, 9))
-        puts "Please select a valid cell number"
-        @selected_cell1 = gets.chomp.to_i
-      end
-      no_turns += 1
-      @arr.each do |value|
-        if @selected_cell1 == value
-          value.replace(@star)
-          puts @star
-        end
-      end
-      puts board
-
-      puts "Now it is #{@second_player.name}'s turn"
-      puts
-
-      puts "Please select an available valid cell number"
-      @selected_cell2 = gets.chomp.to_i
-      until (@selected_cell2 = ~/^-?[0-9]+$/ && @selected_cell2.between?(1, 9))
-        puts "Please select a valid cell number"
-        @selected_cell2 = gets.chomp.to_i
-      end
-      no_turns += 1
+  def player1_turn
+    puts "It is #{@first_player.name}'s turn"
+    puts 
+    puts "Please select an available cell number"
+    @selected_cell1 = gets.chomp
+    if test_move(@selected_cell1)
+      puts "Please select a valid cell number"
     end
   end
+  
 
   def winner
     puts "Invalid move, please enter a number from 1 to 9"
@@ -120,5 +97,5 @@ end
 game = Game.new
 game.greeting
 game.board
-game.turns
+game.player1_turn
 game.winner
