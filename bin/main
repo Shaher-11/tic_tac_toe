@@ -59,6 +59,10 @@ and #{@second_player.name} will play with #{@second_player.sign}"
     puts
   end
 
+  def change(number, symbol)
+    @arr[number] = symbol
+  end
+
   def draw
     puts "#{@fisrt_player.name} & #{@second_player.name} Draw"
   end
@@ -84,13 +88,9 @@ and #{@second_player.name} will play with #{@second_player.sign}"
         puts "Please select a valid cell number"
         @selected_cell1 = gets.chomp.to_i
       end
+      change(@selected_cell1, @star)
       no_turns += 1
-      @arr.each do |value|
-        if @selected_cell1 == value
-          value.replace(@star)
-          puts @star
-        end
-      end
+
       puts board
 
       puts "Now it is #{@second_player.name}'s turn"
