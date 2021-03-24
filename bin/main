@@ -121,9 +121,13 @@ and #{@second_player.name} will play with #{@second_player.sign}"
     draw unless @win == true
     board
   end
+
+  def play
+    greeting
+    board
+    going
+  end
 end
 
 game = Game.new
-game.greeting
-game.board
-game.going
+game.play
