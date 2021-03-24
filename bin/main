@@ -91,36 +91,8 @@ and #{@second_player.name} will play with #{@second_player.sign}"
     end
   end
 
-<<<<<<< HEAD
-  def turns
-    no_turns = 1
-    while no_turns <= 9
-      puts "It is #{@first_player.name}'s turn"
-      puts
-      puts "Please select an available cell number"
-      @selected_cell1 = gets.chomp.to_i
-      until (@selected_cell1 = ~/^-?[0-9]+$/ && @selected_cell1.between?(1, 9))
-        puts "Please select a valid cell number"
-        @selected_cell1 = gets.chomp.to_i
-      end
-      change(@selected_cell1, @star)
-      no_turns += 1
-
-      puts board
-
-      puts "Now it is #{@second_player.name}'s turn"
-      puts
-
-      puts "Please select an available valid cell number"
-      @selected_cell2 = gets.chomp.to_i
-      until (@selected_cell2 = ~/^-?[0-9]+$/ && @selected_cell2.between?(1, 9))
-        puts "Please select a valid cell number"
-        @selected_cell2 = gets.chomp.to_i
-      end
-      no_turns += 1
-=======
   def player2_turn
-    puts " Now It is #{@second_player.name}'s turn"
+    puts "It is #{@first_player.name}'s turn"
     puts 
     puts "Please select an available cell number"
     board
@@ -129,9 +101,10 @@ and #{@second_player.name} will play with #{@second_player.sign}"
       @player2_trn << player2_turn.to_i if test_move(player2_turn) == true
       puts 'Invalid move! Please pick a number between 1 & 9:' if test_move(player2_turn) == false
       break if test_move(player2_turn) == true
->>>>>>> 6d6a85c071c3fb3f7e3c470a73d09f5db964cb69
     end
   end
+
+  
 
   def get_going
     c = 0
