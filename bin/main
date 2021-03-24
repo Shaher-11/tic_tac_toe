@@ -65,18 +65,20 @@ and #{@second_player.name} will play with #{@second_player.sign}"
 
     puts "Please select an available cell number"
     @selected_cell1 = gets.chomp.to_i
-
-    puts "Please select a valid cell number"
-    @selected_cell1 = gets.chomp.to_i
+    until @selected_cell1 <= 9
+      puts "Please select a valid cell number"
+      @selected_cell1 = gets.chomp.to_i
+    end
 
     puts "Now it is #{@second_player.name}'s turn"
     puts
 
     puts "Please select an available valid cell number"
     @selected_cell2 = gets.chomp.to_i
-
-    puts "Please select a valid cell number"
-    @selected_cell2 = gets.chomp.to_i
+    until @selected_cell2 < 9
+      puts "Please select a valid cell number"
+      @selected_cell2 = gets.chomp.to_i
+    end
   end
 
   def winner
