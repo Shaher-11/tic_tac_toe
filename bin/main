@@ -65,7 +65,7 @@ and #{@second_player.name} will play with #{@second_player.sign}"
 
     puts "Please select an available cell number"
     @selected_cell1 = gets.chomp.to_i
-    until @selected_cell1 <= 9
+    until @selected_cell1 =~ /^-?[0-9]+$/
       puts "Please select a valid cell number"
       @selected_cell1 = gets.chomp.to_i
     end
