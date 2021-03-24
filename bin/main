@@ -73,6 +73,7 @@ and #{@second_player.name} will play with #{@second_player.sign}"
     puts "Good luck next time #{@first_player.name} \u{1f609}"
   end
 
+  
   def turns
     puts "It is #{@first_player.name}'s turn"
     puts

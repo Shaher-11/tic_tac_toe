@@ -1,3 +1,2 @@
 module Logic 
-    
   end
