@@ -1,5 +1,4 @@
 module Logic
-
   def calc_tak_turns
     @tak_turns = @player1_trn + @player2_trn
   end
@@ -12,5 +11,15 @@ module Logic
     else
       true
     end
+  end
+
+  def wining
+    @winning_options.each do |win_opt|
+      player1_wins if win_opt - @player1_trn == []
+      @win = true if win_opt - @player1_trn == []
+      player2_wins if win_opt - @player2_trn == []
+      @win = true if win_opt - @player2_trn == []
+    end
+    @win
   end
 end
