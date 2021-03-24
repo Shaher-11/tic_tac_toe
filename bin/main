@@ -4,41 +4,51 @@ require_relative("../lib/board")
 require_relative("../lib/logic")
 
 class Game
-  puts "Welcome to Ruby's tic tac toe \u{1F600}"
-  puts
-  puts "Enter first player name:"
-  player1 = gets.chomp.capitalize
+  include Logic
 
-  until Board.validate_name(player1)
-    puts "Name is too short, please try again"
-    player1 = gets.chomp.capitalize
+  def initialize
+    @player1_trn = []
+    @player2_trn = []
+    @winning_options = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 7], [2, 5, 8], [3, 6, 9], [1, 5, 9], [3, 5, 7]]
+    @turns = []
   end
 
-  puts "Enter second player name:"
-  player2 = gets.chomp.capitalize
+  def greeting
+    puts "Welcome to Ruby's tic tac toe \u{1F600}"
+    puts
 
-  until Board.validate_name(player2)
-    puts "Name is too short,please try again"
-    player2 = gets.chomp.capitalize
+    puts "Enter first player name:"
+    @player1 = gets.chomp.capitalize
+
+    until Board.validate_name(@player1)
+      puts "Name is too short, please try again"
+      @player1 = gets.chomp.capitalize
+    end
+
+    puts "Enter second player name:"
+    @player2 = gets.chomp.capitalize
+
+    until Board.validate_name(@player2)
+      puts "Name is too short,please try again"
+      @player2 = gets.chomp.capitalize
+    end
+
+    @star = "\u{2B50}"
+    @droplet = "\u{1F4A7}"
+
+    @first_player = Player.new(@player1, @star)
+    @second_player = Player.new(@player2, @droplet)
+
+    puts
+    puts "#{@first_player.name} will play with #{@first_player.sign}
+and #{@second_player.name} will play with #{@second_player.sign}"
+    puts
+    puts "Let's Start!"
+    puts
   end
-
-  star = "\u{2B50}"
-  droplet = "\u{1F4A7}"
-
-  first_player = Player.new(player1, star)
-  second_player = Player.new(player2, droplet)
-
-  puts
-  puts "#{first_player.name} will play with #{first_player.sign}
-and #{second_player.name} will play with #{second_player.sign}"
-  puts
-  puts "Let's Start!"
-  puts
-
-  arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-  winning = [[1, 2, 3], [4, 5, 6], [7, 8, 9][1, 5, 8], [2, 6, 9], [3, 7, 9]]
 
   def board
+    arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     puts "+---+---+---+"
     puts "| #{arr[0]} | #{arr[1]} | #{arr[2]} |"
     puts "+---+---+---+"
@@ -49,29 +59,40 @@ and #{second_player.name} will play with #{second_player.sign}"
     puts
   end
 
-  def turn
-    board
-    puts "It is #{first_player.name}'s turn"
-  end
-
-  puts
-
-  puts "Please select an available cell number"
-  selected_cell = gets.chomp.to_i
-  if arr.include?(selected_cell)
-    puts "Now it is #{second_player.name}'s turn"
+  def turns
+    puts "It is #{@first_player.name}'s turn"
     puts
-  else
-    puts "Please select an available cell number"
-    selected_cell = gets.chomp.to_i
-  end
-  puts "Invalid move, please enter a number from 1 to 9" if selected_cell > 9
 
-  puts "It's a TIE"
-  puts
-  puts "Game over"
-  puts
-  puts "The Winner is #{second_player.name} \u{1f973} \u{1F389}"
-  puts
-  puts "Good luck next time #{second_player.name} \u{1f609}"
+    puts "Please select an available cell number"
+    @selected_cell1 = gets.chomp.to_i
+
+    puts "Please select a valid cell number"
+    @selected_cell1 = gets.chomp.to_i
+
+    puts "Now it is #{@second_player.name}'s turn"
+    puts
+
+    puts "Please select an available valid cell number"
+    @selected_cell2 = gets.chomp.to_i
+
+    puts "Please select a valid cell number"
+    @selected_cell2 = gets.chomp.to_i
+  end
+
+  def winner
+    puts "Invalid move, please enter a number from 1 to 9"
+    puts "It's a TIE"
+    puts
+    puts "Game over"
+    puts
+    puts "The Winner is #{@second_player.name} \u{1f973} \u{1F389}"
+    puts
+    puts "Good luck next time #{@second_player.name} \u{1f609}"
+  end
 end
+
+game = Game.new
+game.greeting
+game.board
+game.turns
+game.winner
