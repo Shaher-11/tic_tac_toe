@@ -44,6 +44,9 @@ class Game
     puts "#{@first_player.name} will play with #{@first_player.sign}
 and #{@second_player.name} will play with #{@second_player.sign}"
     puts
+    puts "#{@first_player.name}(#{@first_player.sign}) -- VS -- #{@second_player.name}(#{@second_player.sign}) \n"
+    puts
+    puts
     puts "Let's Start!"
     puts
   end
@@ -59,25 +62,18 @@ and #{@second_player.name} will play with #{@second_player.sign}"
     puts '+---+---+---+'
   end
 
-  def change(number, sign)
-    @arr.each do |index|
-      @arr.push(sign) if number == @arr[index]
-      puts @arr[index]
-    end
-  end
-
   def draw
     puts "#{@first_player.name} & #{@second_player.name} Draw"
   end
 
   def player1_wins
-    puts "The Winner is #{@first_player.name} \u{1f973} \u{1F389}"
-    puts "Good luck next time #{@second_player.name} \u{1f609}"
+    puts "The Winner is #{@first_player.name}(#{@first_player.sign}) \u{1f973} \u{1F389} \n"
+    puts "Good luck next time #{@second_player.name} (#{@second_player.sign}) \u{1f609}"
   end
 
   def player2_wins
-    puts "The Winner is #{@second_player.name} \u{1f973} \u{1F389}"
-    puts "Good luck next time #{@first_player.name} \u{1f609}"
+    puts "The Winner is #{@second_player.name} (#{@second_player.sign}) \u{1f973} \u{1F389} \n"
+    puts "Good luck next time #{@first_player.name} (#{@first_player.sign}) \u{1f609}"
   end
 
   def player1_turn
@@ -86,10 +82,10 @@ and #{@second_player.name} will play with #{@second_player.sign}"
     puts 'Please select an available cell number'
     board
     loop do
-      player1_turn = gets.chomp
-      (@player1_trn << player1_turn.to_i) if test_move(player1_turn) == true
-      puts 'Invalid move! Please pick a number between 1 & 9:' if test_move(player1_turn) == false
-      break if test_move(player1_turn) == true
+      player1_num = gets.chomp
+      @player1_trn << player1_num.to_i if test_move(player1_num) == true
+      puts 'Invalid move! Please pick a number between 1 & 9:' if test_move(player1_num) == false
+      break if test_move(player1_num) == true
     end
   end
 
@@ -99,10 +95,10 @@ and #{@second_player.name} will play with #{@second_player.sign}"
     puts 'Please select an available cell number'
     board
     loop do
-      player2_turn = gets.chomp
-      @player2_trn << player2_turn.to_i if test_move(player2_turn) == true
-      puts 'Invalid move! Please pick a number between 1 & 9:' if test_move(player2_turn) == false
-      break if test_move(player2_turn) == true
+      player2_num = gets.chomp
+      @player2_trn << player2_num.to_i if test_move(player2_num) == true
+      puts 'Invalid move! Please pick a number between 1 & 9:' if test_move(player2_num) == false
+      break if test_move(player2_num) == true
     end
   end
 
