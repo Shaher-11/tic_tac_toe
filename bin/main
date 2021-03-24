@@ -72,17 +72,32 @@ and #{@second_player.name} will play with #{@second_player.sign}"
     puts "The Winner is #{@second_player.name} \u{1f973} \u{1F389}"
     puts "Good luck next time #{@first_player.name} \u{1f609}"
   end
-
+  
   def player1_turn
     puts "It is #{@first_player.name}'s turn"
     puts 
     puts "Please select an available cell number"
-    @selected_cell1 = gets.chomp
-    if test_move(@selected_cell1)
-      puts "Please select a valid cell number"
+    board
+    loop do
+      player1_turn = gets.chomp
+      @player1_trn << player1_turn.to_i if test_move(player1_turn) == true
+      puts 'Invalid move! Please pick a number between 1 & 9:' if test_move(player1_turn) == false
+      break if test_move(player1_turn) == true
     end
   end
-  
+
+  def player2_turn
+    puts " Now It is #{@second_player.name}'s turn"
+    puts 
+    puts "Please select an available cell number"
+    board
+    loop do
+      player2_turn = gets.chomp
+      @player2_trn << player2_turn.to_i if test_move(player2_turn) == true
+      puts 'Invalid move! Please pick a number between 1 & 9:' if test_move(player2_turn) == false
+      break if test_move(player2_turn) == true
+    end
+  end
 
   def winner
     puts "Invalid move, please enter a number from 1 to 9"
@@ -98,4 +113,6 @@ game = Game.new
 game.greeting
 game.board
 game.player1_turn
+game.player1_turn
+
 game.winner
