@@ -1,3 +1,2 @@
-module Logic 
-    
-  end
+module Logic
+end

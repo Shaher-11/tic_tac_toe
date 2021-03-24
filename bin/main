@@ -5,7 +5,7 @@ require_relative("../lib/logic")
 
 class Game
   include Logic
-
+  #@@arr =[1,2,3,4,5,6,7,8,9]
   def initialize
     @player1_trn = []
     @player2_trn = []
@@ -48,13 +48,13 @@ and #{@second_player.name} will play with #{@second_player.sign}"
   end
 
   def board
-    arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    @arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     puts "+---+---+---+"
-    puts "| #{arr[0]} | #{arr[1]} | #{arr[2]} |"
+    puts "| #{@arr[0]} | #{@arr[1]} | #{@arr[2]} |"
     puts "+---+---+---+"
-    puts "| #{arr[3]} | #{arr[4]} | #{arr[5]} |"
+    puts "| #{@arr[3]} | #{@arr[4]} | #{@arr[5]} |"
     puts "+---+---+---+"
-    puts "| #{arr[6]} | #{arr[7]} | #{arr[8]} |"
+    puts "| #{@arr[6]} | #{@arr[7]} | #{@arr[8]} |"
     puts "+---+---+---+"
     puts
   end
@@ -74,24 +74,35 @@ and #{@second_player.name} will play with #{@second_player.sign}"
   end
 
   def turns
-    puts "It is #{@first_player.name}'s turn"
-    puts
-
-    puts "Please select an available cell number"
-    @selected_cell1 = gets.chomp.to_i
-    until @selected_cell1 =~ /^-?[0-9]+$/
-      puts "Please select a valid cell number"
+    no_turns = 1
+    while no_turns <= 9
+      puts "It is #{@first_player.name}'s turn"
+      puts
+      puts "Please select an available cell number"
       @selected_cell1 = gets.chomp.to_i
-    end
+      until (@selected_cell1 = ~/^-?[0-9]+$/ && @selected_cell1.between?(1, 9))
+        puts "Please select a valid cell number"
+        @selected_cell1 = gets.chomp.to_i
+      end
+      no_turns += 1
+      @arr.each do |value|
+        if @selected_cell1 == value
+          value.replace(@star)
+          puts @star
+        end
+      end
+      puts board
 
-    puts "Now it is #{@second_player.name}'s turn"
-    puts
+      puts "Now it is #{@second_player.name}'s turn"
+      puts
 
-    puts "Please select an available valid cell number"
-    @selected_cell2 = gets.chomp.to_i
-    until @selected_cell2 < 9
-      puts "Please select a valid cell number"
+      puts "Please select an available valid cell number"
       @selected_cell2 = gets.chomp.to_i
+      until (@selected_cell2 = ~/^-?[0-9]+$/ && @selected_cell2.between?(1, 9))
+        puts "Please select a valid cell number"
+        @selected_cell2 = gets.chomp.to_i
+      end
+      no_turns += 1
     end
   end
 
@@ -102,7 +113,7 @@ and #{@second_player.name} will play with #{@second_player.sign}"
     puts "Game over"
     puts
     puts
-end 
+  end
 end
 
 game = Game.new
