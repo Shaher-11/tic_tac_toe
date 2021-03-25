@@ -36,13 +36,13 @@
 
 ## Authors
 
-👤 **Author1**
+👤 **Shaher**
 
 - Twitter: [@twitterhandle](https://twitter.com/ShaherShamroukh/)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/shaher-shamroukh/)
 - GitHub: [@githubhandle](https://github.com/Shaher-11/)
 
-👤 **Author2**
+👤 **Addis**
 
 - GitHub: [@Addis0943](https://github.com/Addis0943)
 - Twitter: [@Addis32018084](https://twitter.com/Addis32018084)
