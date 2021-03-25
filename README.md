@@ -11,9 +11,10 @@
 
 ## Getting Started
 
-- **Clone the repo or download the zip folder**
+- **Clone the repo bt running git clone https://github.com/Shaher-11/tic_tac_toe Or download the zip folder**
+- **Run cd tic_tac_toe in the terminal**
 - **Make sure you have ruby installed locally**
-- **run ruby main**
+- **To start the game run ruby main in the terminal**
 
 
 ### Game Instructions
