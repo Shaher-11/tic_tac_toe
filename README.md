@@ -14,24 +14,24 @@
 **make sure you have ruby installed locally**
 **run ruby main**
 
-To get a local copy up and running follow these simple example steps.
 
-### Game Insturaction
+### Game Instructions
 
 1. The game is played on a grid that's 3 squares by 3 squares.
 2. You are Star, your friend is Droplet. Players take turns putting their marks instead of the Numbers
 3. The first player to get 3 of the marks in a row (up, down, across, or diagonally) is the winner.
 4. When all 9 squares are replaced with the signs, the game is over. If no player has 3 marks in a row, the game ends in a tie.
 
-### Setup
+## Live Demo
 
-### Install
+[PLay Now](https://replit.com/@ShaherShamroukh/tictactoe#bin/main) 
 
-### Usage
+## Live demo usage instruction
 
-### Run tests
+1. Make sure the game displayed on the shell.
+2. Run cd bin/
+3. Run ruby main to start the game.
 
-### Deployment
 
 ## Authors
 
