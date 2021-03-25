@@ -4,6 +4,7 @@
 
 > Ruby's Tic Tac Toe is a game built with ruby and the usage of object oriented programming,
 > Emojis have been added to the game for interactivity.
+> ![screenshot](./tic tac screenshoot.mov)
 
 ## Built With
 
@@ -14,7 +15,6 @@
 - **Clone the repo or download the zip folder**
 - **Make sure you have ruby installed locally**
 - **run ruby main**
-
 
 ### Game Instructions
 
