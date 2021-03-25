@@ -25,14 +25,13 @@
 
 ## Live Demo
 
-[PLay Now](https://replit.com/@ShaherShamroukh/tictactoe#bin/main) 
+[PLay Now](https://replit.com/@ShaherShamroukh/tictactoe#bin/main)
 
 ## Live demo usage instruction
 
 1. Make sure the game displayed on the shell.
 2. Run cd bin/
 3. Run ruby main to start the game.
-
 
 ## Authors
 
