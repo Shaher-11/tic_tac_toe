@@ -22,5 +22,4 @@ module Logic
     end
     @win
   end
-
 end
