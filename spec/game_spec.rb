@@ -9,7 +9,6 @@ describe ".validate_name" do
 end 
 end 
 
-describe Logic do
   include Logic
   describe "#calc_tak_turns" do
     it "calculates the plyer turns" do
@@ -18,10 +17,26 @@ describe Logic do
   end
 
   describe "#test_move" do 
-    it "tests each players move" do
+
+    it "tests returns flase if the given number betwen 1 and 9" do
       @tak_turns = [1, 2, 3]
       expect(test_move(4)).to eq(true)
     end
+
+    it "tests returns flase if the given number betwen 1 and 9 and included in the give arr" do
+      @tak_turns = [1, 2, 3]
+      expect(test_move(3)).to eq(false)
+    end
+
+    it "return false if a number is not an integer" do
+      expect(test_move("str")).to eq(false)
+    end
+    it "return false if a number given greater than 9" do
+      expect(test_move(10)).to eq(false)
+    end
+
+    it "return false if a number given less than 1" do
+      expect(test_move(0)).to eq(false)
+    end
+
   end
-end
- 
