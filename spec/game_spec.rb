@@ -7,3 +7,10 @@ describe ".validate_name" do
   end
 end 
 end 
+
+  describe "#calc_tak_turns" do
+    it "calculates the plyer turns" do
+      expect(calc_tak_turns = Array.new()).to eq([])
+    end
+  end
+ 
