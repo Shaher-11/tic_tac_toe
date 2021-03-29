@@ -16,7 +16,7 @@
 - **Clone the repo by running `git clone` https://github.com/Shaher-11/tic_tac_toe Or download the zip folder**
 - **Run `cd` tic_tac_toe in the terminal**
 - **Make sure you have ruby installed locally run `ruby -v`**
-- **To start the game run ```ruby main``` in the terminal**
+- **To start the game run ```bin/main.rb``` in the terminal**
 
 ### Game Instructions
 
@@ -33,7 +33,7 @@
 
 1. Make sure the game displayed on the shell.
 2. Run `cd bin/`
-3. Run ```ruby main``` to start the game.
+3. Run ```main.rb``` to start the game.
 
 ## Authors
 
