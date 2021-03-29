@@ -47,4 +47,21 @@ end
       @player2_trn = [4,5]
       expect(@winning_options[0] - @player1_trn).to eq([])
     end
+
+    it "returns true for @win if the players turn array matches one of the winning options" do
+      @winning_options = [[1,2,3], [4,5,6]]
+      @player1_trn = [1,2]
+      @player2_trn = [4,5]
+      @win = false
+      expect(wining).to be false
+    end
+
+    it "returns true for @win if the players turn array matches one of the winning options" do
+      @winning_options = [[1,2,3], [4,5,6]]
+      @player1_trn = [1,2,3]
+      @player2_trn = [4,5]
+      if @winning_options - @player1_trn == []
+      expect(wining).to be true
+      end
+    end
   end
