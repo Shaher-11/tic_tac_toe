@@ -38,5 +38,13 @@ end
     it "return false if a number given less than 1" do
       expect(test_move(0)).to eq(false)
     end
+  end
 
+  describe "#wining" do
+    it "returns true if the players turn array matches one of the winning options" do
+      @winning_options = [[1,2,3], [4,5,6]]
+      @player1_trn = [1,2,3]
+      @player2_trn = [4,5]
+      expect(@winning_options[0] - @player1_trn).to eq([])
+    end
   end
