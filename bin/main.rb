@@ -129,10 +129,3 @@ and #{@second_player.name} will play with #{@second_player.sign}"
   end
 end
 game = Game.new
-game.play
-
-class Calculator
-  def add(z, x)
-    z + x
-  end
-end
