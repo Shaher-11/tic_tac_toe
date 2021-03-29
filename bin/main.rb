@@ -128,4 +128,3 @@ and #{@second_player.name} will play with #{@second_player.sign}"
     going
   end
 end
-game = Game.new
