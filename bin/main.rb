@@ -2,6 +2,7 @@
 require_relative('../lib/player')
 require_relative('../lib/board')
 require_relative('../lib/logic')
+
 class Game
   include Logic
   def initialize
@@ -127,5 +128,3 @@ and #{@second_player.name} will play with #{@second_player.sign}"
     going
   end
 end
-game = Game.new
-game.play
