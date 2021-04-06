@@ -1,59 +1,53 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+![](https://img.shields.io/badge/Tic_Tac_Toe-blueviolet)
 
-# Project Name
+# Tic Tac Toe
 
-> One paragraph statement about the project.
+> Ruby's Tic Tac Toe is a game built with ruby and the usage of object oriented programming,
+> Emojis have been added to the game for interactivity.
 
-![screenshot](./app_screenshot.png)
-
-Additional description about the project and its features.
+![screenshot](tic_tac.jpg)
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo
-
-[Live Demo Link](https://livedemo.com)
-
+- Ruby
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+- **Clone the repo by running `git clone` https://github.com/Shaher-11/tic_tac_toe Or download the zip folder**
+- **Run `cd` tic_tac_toe in the terminal**
+- **Make sure you have ruby installed locally run `ruby -v`**
+- **To start the game run ```bin/main.rb``` in the terminal**
 
+### Game Instructions
 
-To get a local copy up and running follow these simple example steps.
+1. The game is played on a grid that's 3 squares by 3 squares.
+2. You are Star, your friend is Droplet. Players take turns putting their marks instead of the Numbers
+3. The first player to get 3 of the marks in a row (up, down, across, or diagonally) is the winner.
+4. When all 9 squares are replaced with the signs, the game is over. If no player has 3 marks in a row, the game ends in a tie.
 
-### Prerequisites
+## Live Demo
 
-### Setup
+[PLay Now](https://replit.com/@ShaherShamroukh/tictactoe#bin/main)
 
-### Install
+## Live demo usage instruction
 
-### Usage
-
-### Run tests
-
-### Deployment
-
-
+1. Make sure the game displayed on the shell.
+2. Run `cd bin/`
+3. Run ```main.rb``` to start the game.
 
 ## Authors
 
-👤 **Author1**
+👤 **Shaher**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/linkedinhandle)
+- Twitter: [@twitterhandle](https://twitter.com/ShaherShamroukh/)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/shaher-shamroukh/)
+- GitHub: [@githubhandle](https://github.com/Shaher-11/)
 
-👤 **Author2**
+👤 **Addis**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/linkedinhandle)
+- GitHub: [@Addis0943](https://github.com/Addis0943)
+- Twitter: [@Addis32018084](https://twitter.com/Addis32018084)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/addis-belete-134b98191)
 
 ## 🤝 Contributing
 
@@ -67,10 +61,9 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Microverse
+- The Odin Project
 
 ## 📝 License
 
-This project is [MIT](lic.url) licensed.
+This project is [MIT](./LICENSE) licensed.
