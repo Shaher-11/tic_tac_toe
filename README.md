@@ -33,7 +33,7 @@
 
 1. Make sure the game displayed on the shell.
 2. Run `cd bin/`
-3. Run ```main.rb``` to start the game.
+3. Run ```ruby main.rb``` to start the game.
 
 ## Authors
 

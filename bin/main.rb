@@ -127,4 +127,7 @@ and #{@second_player.name} will play with #{@second_player.sign}"
     board
     going
   end
+  new_game = Game.new
+  new_game.play
 end
+
